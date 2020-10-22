@@ -8,8 +8,14 @@
     </style>
 {% endblock %}
 {% block space_app %}
-    <ul>
-        {{ rocket.name }} / {{ rocket.launch_price }}
-    </ul>
+    <h1 CLASS="amount">
+        NAME: {{ rocket.name }}
+    </h1>
+    <h2>
+        LAUNCH PRICE: {{ rocket.launch_price }}
+    </h2>
+    <h2>
+        PRODUCER: {{ rocket.producer }}
+    </h2>
 {% endblock %}
 

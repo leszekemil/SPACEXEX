@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% block space_app %}
-    <ul>
-        {{ satellite.name }} / {{ satellite.weight }}
-    </ul>
+    <h1>
+        NAME: {{ satellite.name }}
+    </h1>
+    <h2>
+        WEIGHT: {{ satellite.weight }}
+    </h2>
+    <h2>
+        DEST. ORBIT: {{ satellite.destination_orbit }}
+    </h2>
 {% endblock %}
 

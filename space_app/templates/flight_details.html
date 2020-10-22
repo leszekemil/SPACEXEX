@@ -8,8 +8,23 @@
     </style>
 {% endblock %}
 {% block space_app %}
-    <ul>
-        {{ flight.flight_id }} / {{ flight.departure_date }} / {{ flight.satellite }}
-    </ul>
+    <h1 CLASS="amount">
+        DESTINATION: {{ flight.destination }}
+    </h1>
+    <h2>
+        ROCKET: {{ flight.rocket }}
+    </h2>
+    <h2>
+        SATELLITE: {{ flight.satellite }}
+    </h2>
+    <h2>
+        LAUNCH SITE: {{ flight.launchsite }}
+    </h2>
+    <h2>
+        DEPARTURE DATE: {{ flight.departure_date }}
+    </h2>
+    <h2>
+        FLIGHT ID: {{ flight.flight_id }}
+    </h2>
 {% endblock %}
 
