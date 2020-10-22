@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block background %}
+    <style>
+        body {
+            background: url("https://images.unsplash.com/photo-1516849841032-87cbac4d88f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+            height: 100vh;
+        }
+        table, th, td {
+            border-collapse: collapse;
+        }
+        th {
+            color: darkgrey;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+{% endblock %}
+{% block space_app %}
+    <a class="button1" href="/rocket/add/">ADD ROCKET</a>
+    <a class="button2" href="/producer/add/">ADD PRODUCER</a>
+    <a class="button3" href="/launchsite/add/">ADD LAUNCH SITE</a>
+    <table class="tables" style="width:100%">
+        <tr>
+            <th>ROCKET</th>
+            <th>PRODUCER</th>
+            <th>LAUNCH PRICE</th>
+            <th>ACTIONS</th>
+        </tr>
+        <tr>
+            {% for i in rockets %}
+                <td>{{ i.name }}</td>
+                <td>{{ i.producer }}</td>
+                <td>{{ i.launch_price }}&nbsp$</td>
+                <td><a class="buttonminidelete" href="{{ i.del_url }}">X</a>
+                    <a class="buttonminiedit" href="{{ i.get_edit_url }}">EDIT</a>
+                    <a class="buttonmimore" href="{{ i.get_detail_url }}">...</a>
+                </td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

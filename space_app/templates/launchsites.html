@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block background %}
+    <style>
+        body {
+            background: url("https://s2.best-wallpaper.net/wallpaper/2880x1800/2005/Satellite-launch-base-island_2880x1800.jpg") center/cover no-repeat;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
+{% block space_app %}
+<ul>
+    {% for i in launchsites %}
+        <li>{{ i }} - {{ i.rockets }}</li>
+    {% endfor %}
+</ul>>
+{% endblock %}

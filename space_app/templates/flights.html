@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block background %}
+    <style>
+        body {
+            background: url("https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+            height: 100vh;
+        }
+
+        table, th, td {
+            border-collapse: collapse;
+        }
+        th {
+            color: darkgrey;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+{% endblock %}
+{% block space_app %}
+    <a class="button1" href="/flight/add/">BOOK YOUR FLIGHT</a>
+    <table class="tables" style="width:100%">
+        <tr>
+            <th>DEPARTURE</th>
+            <th>DEST.</th>
+            <th>ROCKET</th>
+            <th>SATELLITE</th>
+            <th>LAUNCHSITE</th>
+            <th>ACTIONS</th>
+        </tr>
+        <tr>
+            {% for i in flights %}
+                <td>{{ i.departure_date }}</td>
+                <td>{{ i.destination.orbit }}</td>
+                <td>{{ i.rocket.name }}</td>
+                <td>{{ i.satellite.name }}</td>
+                <td>{{ i.launchsite }}</td>
+                <td><a class="buttonminidelete" href="{{ i.del_url }}">X</a>
+                    <a class="buttonminiedit" href="{{ i.get_edit_url }}">EDIT</a>
+                    <a class="buttonmimore" href="{{ i.get_detail_url }}">...</a>
+                </td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

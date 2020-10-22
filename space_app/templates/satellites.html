@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block background %}
+    <style>
+        body {
+            background: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80") center/cover no-repeat;
+            height: 100vh;
+        }
+        table, th, td {
+            border-collapse: collapse;
+        }
+        th {
+            color: dimgrey;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+{% endblock %}
+{% block space_app %}
+    <a class="button1" href="/satellite/add/">ADD SATELLIE</a>
+    <table class="tables" style="width:100%">
+        <tr>
+            <th>SATELLITE</th>
+            <th>WEIGHT</th>
+            <th>DESC.</th>
+            <th>DEST. ORBIT</th>
+            <th>ACTIONS</th>
+        </tr>
+        <tr>
+            {% for i in satellites %}
+                <td>{{ i.name }}</td>
+                <td>{{ i.weight }}&nbsp[KG]</td>
+                <td>{{ i.description }}</td>
+                <td>{{ i.destination_orbit }}</td>
+                <td><a class="buttonminidelete" href="{{ i.del_url }}">X</a>
+                    <a class="buttonminiedit" href="{{ i.get_edit_url }}">EDIT</a>
+                    <a class="buttonmimore" href="{{ i.get_detail_url }}">...</a>
+                </td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

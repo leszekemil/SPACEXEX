@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block background %}
+    <style>
+        body {
+            background: url("https://images.unsplash.com/photo-1457364887197-9150188c107b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
+{% block space_app %}
+    <ul>
+        {{ flight.flight_id }} / {{ flight.departure_date }} / {{ flight.satellite }}
+    </ul>
+{% endblock %}
+

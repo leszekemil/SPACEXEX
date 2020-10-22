@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block background %}
+    <style>
+        body {
+            background: url("https://s2.best-wallpaper.net/wallpaper/2880x1800/2005/Satellite-launch-base-island_2880x1800.jpg") center/cover no-repeat;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
+{% block space_app %}
+<table border="1">
+    <form method="POST" class="dupa">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <tr>
+        <td align="center" colspan="2"><input type="submit"></td>
+        </tr>
+    </form>
+</table>
+{% endblock %}
+

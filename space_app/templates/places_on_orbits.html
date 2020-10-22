@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block background %}
+    <style>
+        body {
+            background: url("https://images.unsplash.com/photo-1534351329407-fb35592df1d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80") center/cover no-repeat;
+            height: 100vh;
+        }
+
+        table, th, td {
+            border-collapse: collapse;
+        }
+
+        th {
+            color: darkgrey;
+        }
+
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+{% endblock %}
+{% block space_app %}
+    <a class="button1" href="/place_on_orbit/add/">BOOK YOUR PLACE ON ORBIT</a>
+    <table class="tables" style="width:100%">
+        <tr>
+            <th>ORBIT</th>
+            <th>START</th>
+            <th>EXPIRATION</th>
+            <th>PURPOSE</th>
+            <th>ACTIONS</th>
+        </tr>
+        <tr>
+            {% for i in places_on_orbits %}
+                <td>{{ i.orbit }}</td>
+                <td>{{ i.start_date }}</td>
+                <td>{{ i.expiration_date }}</td>
+                <td>{{ i.purpose }}</td>
+                <td>
+                    <a class="buttonmimore" href="{{ i.get_detail_url }}">...</a>
+                </td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{{ title }}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    {% if button_name %}
+        <input type="submit" value="{{ button_name }}">
+    {% else %}
+        <input type="submit">
+    {% endif %}
+
+</form>
+

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block log %}
+    USER LIST:
+    <ul>
+        {% for obj in object_list %}
+            <li>
+                {{ obj.username }} <a href="{% url 'change_permission' obj.pk %}">EDIT</a>
+            </li>
+        {% empty %}
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}
